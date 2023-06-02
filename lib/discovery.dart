@@ -29,9 +29,9 @@ typedef DiscoverResult<T> = Future<List<PrinterDiscovered<T>>>;
 Future<List<PrinterDiscovered>> discoverPrinters(
     {List<DiscoverResult Function()> modes = const [
       // discoverStarPrinter,
-      UsbPrinterConnector.discoverPrinters,
+      // UsbPrinterConnector.discoverPrinters,
       BluetoothPrinterConnector.discoverPrinters,
-      TcpPrinterConnector.discoverPrinters
+      // TcpPrinterConnector.discoverPrinters
     ]}) async {
   List<PrinterDiscovered> result = [];
   await Future.wait(modes.map((m) async {
